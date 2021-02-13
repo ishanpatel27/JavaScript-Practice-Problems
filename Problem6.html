@@ -1,0 +1,35 @@
+<! –– Write a javascript code that performs the following cases: 
+
+Case1: Hide the myBtn without leaving any space on the page.
+
+Case2: While clicking on myBtn1, display its label text in the paragraph tag.
+
+Author : Ishan Patel
+-->
+
+<html>
+     <body>
+
+        <button id="myBtn" onclick="btnmyFunction()">My Button</button>
+        <button  id="myBtn1" onclick="btnmyFunction2()" >Display The Label </button>
+         <p id="paragraph"></p>
+<script>
+function btnmyFunction() {
+var x = document.getElementById("myBtn");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function btnmyFunction2() {
+
+var y = document.getElementById("myBtn1").innerText;
+document.getElementById("paragraph").innerHTML = y
+}
+
+</script>
+
+      </body>
+</html>

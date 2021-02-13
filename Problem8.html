@@ -1,0 +1,43 @@
+
+
+<!-- 
+
+Write the function which achieves the following cases
+
+a. The function should be describing the async/await concept.
+
+b. Call the url “htttp//:localhost/user/details”.
+
+c. If the response status code is not ok, Throw the error saying “HTTP Error”
+
+d. If the response status is a success then return the result
+
+Author : Ishan Patel
+-->
+
+<html>
+<body>
+<p id="demo"></p>
+
+<script>
+async function getFile() {
+  let myPromise = new Promise(function(myResolve, myReject) {
+    let req = new XMLHttpRequest();
+    req.open('GET', "htttp//:localhost/user/details");
+    req.onload = function() {
+      if (req.status == 200) {
+        myResolve(req.response);
+      } else {
+        myResolve("not Found HTTP Error");
+      }
+    };
+    req.send();
+  });
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+
+getFile();
+</script>
+
+</body>
+</html>
